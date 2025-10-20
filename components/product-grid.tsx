@@ -1,7 +1,6 @@
 "use client"
 
-import { useState, useMemo } from "react"
-import { useSearchParams } from "next/navigation"
+import { useState, useMemo, useEffect } from "react"
 import Link from "next/link"
 import { ProductCard } from "@/components/product-card"
 import { Button } from "@/components/ui/button"
@@ -117,8 +116,17 @@ export function ProductGrid({
 }: ProductGridProps) {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid")
   const [sortBy, setSortBy] = useState("featured")
-  const searchParams = useSearchParams()
-  const query = (searchParams.get("q") || "").trim().toLowerCase()
+  const [query, setQuery] = useState("")
+
+  // Read query string on client after mount to keep prerender static
+  useEffect(() => {
+    try {
+      const sp = new URLSearchParams(window.location.search)
+      setQuery((sp.get("q") || "").trim().toLowerCase())
+    } catch {
+      // no-op
+    }
+  }, [])
 
   const filteredProducts = useMemo(() => {
     let filtered = [...allProducts]
