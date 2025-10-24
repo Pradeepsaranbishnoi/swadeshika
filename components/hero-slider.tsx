@@ -29,13 +29,22 @@ import { cn } from "@/lib/utils"
 const slides = [
   {
     id: 1,
-    title: "Pure Tradition in Every Spoonful",
-    subtitle: "Authentic Desi Ghee",
-    description: "Handcrafted from grass-fed cow milk using time-honored methods",
-    image: "/hero-slide-1-traditional-ghee.jpg",
-    cta: "Discover Ghee",
-    ctaLink: "/shop/ghee",
+    // title: "Pure Tradition in Every Spoonful",
+    // subtitle: "Authentic Desi Ghee",
+    // description: "Handcrafted from grass-fed cow milk using time-honored methods",
+    image: "/slider.png",
+    // cta: "Discover Ghee",
+    // ctaLink: "/shop/ghee",
   },
+  // {
+  //   id: 1,
+  //   title: "Pure Tradition in Every Spoonful",
+  //   subtitle: "Authentic Desi Ghee",
+  //   description: "Handcrafted from grass-fed cow milk using time-honored methods",
+  //   image: "/hero-slide-1-traditional-ghee.jpg",
+  //   cta: "Discover Ghee",
+  //   ctaLink: "/shop/ghee",
+  // },
   {
     id: 2,
     title: "Spices That Tell Stories",
@@ -110,7 +119,7 @@ export function HeroSlider() {
             className="absolute inset-0 w-full h-full object-cover"
           />
           {/* Gradient overlay for text readability, slightly softer for brand look */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/30 to-black/10" />
+          {/* <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/30 to-black/10" /> */}
 
           {/* Slide Content - Text and CTAs */}
           <div className="relative h-full container mx-auto px-4 lg:px-8 flex items-center">
@@ -137,6 +146,7 @@ export function HeroSlider() {
                 {/* CTA buttons - Primary and secondary actions */}
                 <div className="flex flex-wrap gap-4">
                   {/* Primary CTA - Shop category */}
+                  {slide.ctaLink && (
                   <Button
                     size="lg"
                     asChild
@@ -148,14 +158,15 @@ export function HeroSlider() {
                       <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </Button>
+                  )}
                   {/* Secondary CTA - Learn about brand */}
-                  <Button
+                  {/* <Button
                     size="lg"
                     asChild
                     className="bg-[#FF7E00] hover:bg-[#E67300] text-white px-8 py-4 text-base h-auto rounded-full shadow-lg"
                   >
                     <Link href="/about">Our Story</Link>
-                  </Button>
+                  </Button> */}
                 </div>
               </div>
             </div>
