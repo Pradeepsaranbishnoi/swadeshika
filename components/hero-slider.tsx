@@ -29,12 +29,12 @@ import { cn } from "@/lib/utils"
 const slides = [
   {
     id: 1,
-    // title: "Pure Tradition in Every Spoonful",
+    title: "Taste the Tradition Feel the Purity",
     // subtitle: "Authentic Desi Ghee",
-    // description: "Handcrafted from grass-fed cow milk using time-honored methods",
+    description: "Crafted with care, perfected with purity, cherished for generations.",
     image: "/slider.png",
-    // cta: "Discover Ghee",
-    // ctaLink: "/shop/ghee",
+    cta: "Discover Ghee",
+    ctaLink: "/shop/ghee",
   },
   // {
   //   id: 1,
@@ -136,11 +136,11 @@ export function HeroSlider() {
                   {slide.subtitle}
                 </p>
                 {/* Main heading - Large serif font for elegance */}
-                <h1 className="font-sans text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-white text-balance leading-[1.1] mb-6">
+                <h1 className="font-sans text-5xl sm:text-4xl lg:text-7xl xl:text-6xl font-bold  text-balance leading-[1.1] mb-6">
                   {slide.title}
                 </h1>
                 {/* Description text */}
-                <p className="text-xl lg:text-2xl text-white/90 text-pretty max-w-2xl mb-10 leading-relaxed">
+                <p className="text-xl lg:text-2xl text-pretty max-w-2xl mb-10 leading-relaxed">
                   {slide.description}
                 </p>
                 {/* CTA buttons - Primary and secondary actions */}
