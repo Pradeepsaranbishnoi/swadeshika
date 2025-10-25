@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { Plus, Search, Edit, Trash2, MoreVertical } from "lucide-react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
@@ -58,9 +59,11 @@ export function AdminProductsList() {
           <h1 className="font-serif text-3xl font-bold mb-2 text-[#6B4423]">Products</h1>
           <p className="text-[#8B6F47]">Manage your product inventory</p>
         </div>
-        <Button className="gap-2 bg-[#2D5F3F] hover:bg-[#234A32] text-white">
-          <Plus className="h-4 w-4" />
-          Add Product
+        <Button className="gap-2 bg-[#2D5F3F] hover:bg-[#234A32] text-white" asChild>
+          <Link href="/admin/products/new">
+            <Plus className="h-4 w-4" />
+            Add Product
+          </Link>
         </Button>
       </div>
 
